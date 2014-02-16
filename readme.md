@@ -38,7 +38,9 @@ This theme, like WordPress, is licensed under the GPL. Do what you want with it.
 
 Developer
 -----
-Is this theme useful to you? If so, consider buying me a box of "Tazo: Awake - English Breakfast Black Tea." I need all the energiez. [Donate Black Tea](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52HQDSEUA542S)
+I'm Sean. I created the [Volatyl Framework](http://volatylthemes.com) for WordPress. I write stuff on my [personal site](http://seandavis.co) and [SDavis Media](http://sdavismedia.com). Follow me on the [Twitter](http://sdvs.me/twitter) machine.
+
+Meanwhile, tell me... is this theme useful to you? If so, consider buying me a box of "Tazo: Awake - English Breakfast Black Tea." I need ALL the energiez. [Donate Black Tea](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52HQDSEUA542S)
 
 Screenshots
 -----
