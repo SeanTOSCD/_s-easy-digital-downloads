@@ -55,7 +55,7 @@ Screenshots
 
 #### Single download page with sidebar download information
 
-![Download page](http://seandavis.co/wp-content/uploads/2014/02/download-page.png "Download page")
+![Download page](http://seandavis.co/wp-content/uploads/2014/02/single-download-page.png "Download page")
 
 #### Basic customizer settings for the main site
 
