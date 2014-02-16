@@ -14,7 +14,7 @@ Features
 * Full _s CSS reset and basic styles in place
 * Full-width structure built in instead of page-width - see "Structure" seciton of `style.css`
 * HTML structure CSS as well as and its corresponding responsive CSS already written to include responsive menu toggle
-* Font Awesome files already built in and ready to use `&lt;i&gt;` tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
+* Font Awesome files already built in and ready to use `<i>` tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
 
 Theme Instructions
 -----
