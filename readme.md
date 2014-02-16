@@ -11,9 +11,9 @@ Features
 * Grid-ready store front template for digital downloads created in EDD. 
 * Theme customizer options built to customize EDD output as well as regular blog settings
 * EDD-specific sidebar for download pages with download information at the top of the sidebar
-* Full _s CSS reset and basic styles in place
-* Full-width structure built in instead of page-width - see "Structure" seciton of `style.css`
-* HTML structure CSS as well as and its corresponding responsive CSS already written to include responsive menu toggle
+* Full _s CSS reset and basic starter styles in place
+* Full-width HTML structure built in instead of the page-width _s ships with - see "Structure" section of `style.css` to see the CSS and see the `header.php` and `footer.php` files to see the full-width HTML structure in place.
+* HTML layout CSS (content/sidebar) as well as and its corresponding responsive CSS already written to include responsive menu toggle
 * Font Awesome files already built in and ready to use `<i>` tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
 
 Theme Instructions
