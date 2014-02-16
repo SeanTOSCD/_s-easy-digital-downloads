@@ -12,6 +12,8 @@ Features
 * Theme customizer options built to customize EDD output as well as regular blog settings
 * EDD-specific sidebar for download pages with download information at the top of the sidebar
 * Full _s CSS reset and basic styles as well as HTML structure styles for easy customization
+* HTML structure CSS as well as and its corresponding responsive CSS already written to include responsive menu toggle
+* Font Awesome files already built in and ready to use <i> tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
 
 Theme Instructions
 -----
