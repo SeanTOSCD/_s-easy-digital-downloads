@@ -11,17 +11,18 @@ Features
 * Grid-ready store front template for digital downloads created in EDD. 
 * Theme customizer options built to customize EDD output as well as regular blog settings
 * EDD-specific sidebar for download pages with download information at the top of the sidebar
-* Full _s CSS reset and basic styles as well as HTML structure styles for easy customization
+* Full _s CSS reset and basic styles in place
+* Full-width structure built in instead of page-width - see "Structure" seciton of `style.css`
 * HTML structure CSS as well as and its corresponding responsive CSS already written to include responsive menu toggle
-* Font Awesome files already built in and ready to use <i> tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
+* Font Awesome files already built in and ready to use `&lt;i&gt;` tags from [Font Awesome](http://fontawesome.io/icons/) with no additional work
 
 Theme Instructions
 -----
 If you know how to use _s, you know how to use this starter theme. The same is true if you know how to use your browser inspector. CSS is really all that's missing.
 
-The theme uses the slug "sdm" throughout the files. Do a case-sensitive search and replace in *every* file to use your own theme slug. Change the theme name in the style.css file as well as the rtl.css file. In the functions.php file, be sure to change the definitions. They start with "SDM_" and because they are all caps, your case-sensitive search and replace didn't catch them.
+The theme uses the slug `sdm` throughout the files. Do a case-sensitive search and replace in *every* file to use your own theme slug. Change the theme name in the `style.css` file as well as the `rtl.css` file. In the `functions.php` file, be sure to change the definitions. They start with `SDM_` and because they are all caps, your case-sensitive search and replace didn't catch them.
 
-In the languages directory, change the name of the .pot file to match your slug. And of course, name the theme folder whatever you'd like.
+In the languages directory, change the name of the `.pot` file to match your slug. And of course, name the theme folder whatever you'd like.
 
 With that done, you're ready to activate the theme and write some CSS. It's that easy.
 
@@ -42,22 +43,22 @@ Is this theme useful to you? If so, consider buying me a box of "Tazo: Awake - E
 Screenshots
 -----
 
-Basic, style-less theme ready for customization
+#### Basic, style-less theme ready for customization
 
 ![Basic look](http://seandavis.co/wp-content/uploads/2014/02/default-layout.png "Basic look")
 
-Store front page template - download archives/categories/tags
+#### Store front page template - download archives/categories/tags
 
 ![Store front](http://seandavis.co/wp-content/uploads/2014/02/store-front1.png "Store front")
 
-Single download page with sidebar download information
+#### Single download page with sidebar download information
 
 ![Download page](http://seandavis.co/wp-content/uploads/2014/02/download-page.png "Download page")
 
-Basic customizer settings for the main site
+#### Basic customizer settings for the main site
 
 ![Customizer](http://seandavis.co/wp-content/uploads/2014/02/customizer-blog.png "Customizer")
 
-Additional customizer options for store front/download archives customization
+#### Additional customizer options for store front/download archives customization
 
 ![EDD Customizer](http://seandavis.co/wp-content/uploads/2014/02/customizer-store.png "EDD Customizer")
