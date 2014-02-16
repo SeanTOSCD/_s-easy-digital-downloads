@@ -23,6 +23,29 @@ In the languages directory, change the name of the .pot file to match your slug.
 
 With that done, you're ready to activate the theme and write some CSS. It's that easy.
 
+Screenshots
+-----
+
+Basic, style-less theme ready for customization
+
+![Basic look](http://seandavis.co/wp-content/uploads/2014/02/default-layout.png "Basic look")
+
+Store front page template - download archives/categories/tags
+
+![Store front](http://seandavis.co/wp-content/uploads/2014/02/store-front1.png "Store front")
+
+Single download page with sidebar download information
+
+![Download page](http://seandavis.co/wp-content/uploads/2014/02/download-page.png "Download page")
+
+Basic customizer settings for the main site
+
+![Customizer](http://seandavis.co/wp-content/uploads/2014/02/customizer-blog.png "Customizer")
+
+Additional customizer options for store front/download archives customization
+
+![EDD Customizer](http://seandavis.co/wp-content/uploads/2014/02/customizer-store.png "EDD Customizer")
+
 Bugs and Contributions
 -----
 If you notice any mistakes, feel free to fork the repo and submit a pull request with your corrections. The same is true of any features you feel should be added or changes that can be made. 
@@ -32,3 +55,7 @@ If you have a *popular* EDD extension that should probably be supported by defau
 License
 -----
 This theme, like WordPress, is licensed under the GPL. Do what you want with it. I seriously don't care. 
+
+Developer
+-----
+Is this theme useful to you? If so, consider buying me a box of "Tazo: Awake - English Breakfast Black Tea." I need all the energiez. [Donate Black Tea](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52HQDSEUA542S)
