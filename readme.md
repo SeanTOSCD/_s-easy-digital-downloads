@@ -1,4 +1,4 @@
-Underscores + Easy Digital Downloads Starter Theme
+Underscores (_s) + Easy Digital Downloads Starter Theme for WordPress
 -----
 
 This theme is a styleless combination of the [Underscores (_s) starter theme by Automattic](https://github.com/Automattic/_s) and [Easy Digital Downloads (EDD)](https://easydigitaldownloads.com/).
