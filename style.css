@@ -118,29 +118,49 @@ a img {
 }
 
 /*--------------------------------------------------------------
-1.5 - Structure
+1.5 - Structure - read the descriptions on the CSS rules
+*
+* If you're already familiar with Underscores, it's important
+* to know that the page-width HTML structure has been replaced
+* in this theme by a full-width structure... that way full-width
+* designs can be created as well as page-width if you choose to
+* do so. 
+*
+* The #page that originally wrapped the header, content, and footer
+* has been removed and those three sections have been given their
+* own full-width HTML structure like so...
+*
+* <div class="area-name full">
+*	<div class="main">
+*		<header class="element-name inner">
+*			...header stuff...
+*		</header>
+*	</div>
+* </div>
+*
+* Controlling the page content width is as simple as adjusting
+* the max-width property of the .main class. THAT VALUE NEEDS TO
+* MATCH THE FIRST MEDIA QUERY VALUE IN THE RESPONSIVE SECTION.
 --------------------------------------------------------------*/
-.full {
+.full { /* this class creates the full-width structure */
 	width: 100%;
 }
-.main {
+.main { /* this class controls main design width and alignment within the above class */
 	margin: 0 auto;
 	width: 100%;
-	max-width: 960px;
+	max-width: 960px; /* THIS SHOULD MATCH THE FIRST MEDIA QUERY VALUE */
 }
-.inner {
+.inner { /* this class actual site content from the two important classes it's nested under */
 	position: relative;
 	padding: 30px 0;
 }
-#primary,
-#secondary {
+#primary { /* content */
 	float: left;
-}
-#primary {
 	padding-right: 30px;
 	width: 68%;
 }
-#secondary {
+#secondary { /* sidebar */
+	float: left;
 	width: 32%;
 }
 
@@ -511,8 +531,8 @@ a:active {
 --------------------------------------------------------------*/
 .threecol.product {
 	float: left;
-	width: 310px;
-	margin: 0 15px 30px 0;
+	width: 32.291666666667%;
+	margin: 0 1.5625% 30px 0;
 }
 .threecol.product:nth-child(3n+3) {
 	margin-right: 0;
@@ -576,7 +596,7 @@ object {
 /*--------------------------------------------------------------
 13.0 - Responsive
 --------------------------------------------------------------*/
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 960px) {
 	.threecol.product {
 		float: left;
 		width: 49%;
@@ -607,7 +627,6 @@ object {
 }
 
 @media screen and (max-width: 550px) {
-
 	.threecol.product {
 		float: none;
 		width: 100%;
