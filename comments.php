@@ -41,6 +41,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'div',
 					'short_ping' => true,
+					'avatar_size'	=> 55
 				) );
 			?>
 		</div>
@@ -62,6 +63,32 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'sdm' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
-
+	<?php 
+		$commenter = wp_get_current_commenter();
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+		comment_form( 
+			array(
+				'id_form'				=> 'commentform',
+				'id_submit'				=> 'submit',
+				'title_reply'			=> __( 'Leave a Reply', 'sdm' ),
+				'title_reply_to'		=> __( 'Leave a Reply to %s', 'sdm' ),
+				'cancel_reply_link'		=> __( 'Cancel Reply', 'sdm' ),
+				'label_submit'			=> __( 'Post Comment', 'sdm' ),	
+				'comment_field'			=>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' . '</textarea></p>',	
+				'must_log_in'			=> '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'sdm' ), wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',	
+				'logged_in_as'			=> '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'sdm' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',	
+				'comment_notes_before'	=> '',	
+				'comment_notes_after'	=> '',	
+				'fields'				=> apply_filters( 'comment_form_default_fields', array(
+					'author'				=> '<p class="comment-form-author comment-form-field"><input id="author" name="author" type="text" placeholder="Name"' . $aria_req . ' /></p>',
+				
+					'email'					=> '<p class="comment-form-email comment-form-field"><input id="email" name="email" type="text" placeholder="Email"' . $aria_req . ' /></p>',
+				
+					'url'					=> '<p class="comment-form-url comment-form-field"><input id="url" name="url" type="text" placeholder="Website URL" /></p>'
+					)
+				),
+			) 
+		);
+	?>
 </div>
