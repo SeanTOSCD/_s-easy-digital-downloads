@@ -6,8 +6,8 @@
 /**
  * definitions
  */
-define('SDM_NAME', '');
-define('SDM_VERSION', '1.0');
+define( 'SDM_NAME', '' );
+define( 'SDM_VERSION', '1.0' );
 
 
 if ( ! function_exists( 'sdm_setup' ) ) :
@@ -35,7 +35,7 @@ function sdm_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// add a hard cropped (for uniformity) image size for the product grid
-	// add_image_size( 'product-img', 540, 360, true );
+	add_image_size( 'product-img', 540, 360, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -77,11 +77,9 @@ add_action( 'widgets_init', 'sdm_widgets_init' );
 function sdm_scripts() {
 	wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
 	wp_enqueue_style( 'fontawesome' );
-	
 	wp_enqueue_style( 'sdm-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'sdm-navigation', get_template_directory_uri() . '/inc/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'sdm-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
