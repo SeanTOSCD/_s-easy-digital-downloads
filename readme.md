@@ -1,7 +1,7 @@
 Underscores + Easy Digital Downloads Starter Theme
 -----
 
-This theme is a style-less combination of the [Underscores (_s) starter theme by Automattic](https://github.com/Automattic/_s) and [Easy Digital Downloads (EDD)](https://easydigitaldownloads.com/).
+This theme is a styleless combination of the [Underscores (_s) starter theme by Automattic](https://github.com/Automattic/_s) and [Easy Digital Downloads (EDD)](https://easydigitaldownloads.com/).
 
 Every time I build a WordPress theme with _s and integrate it with EDD, I do a couple of hours of dirty work. No more. All the dirty work is done here in this starter theme.
 
@@ -43,7 +43,7 @@ Is this theme useful to you? If so, consider buying me a box of "Tazo: Awake - E
 Screenshots
 -----
 
-#### Basic, style-less theme ready for customization
+#### Basic, styleless theme ready for customization
 
 ![Basic look](http://seandavis.co/wp-content/uploads/2014/02/default-layout.png "Basic look")
 
