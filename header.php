@@ -21,7 +21,7 @@ $ping = get_bloginfo('pingback_url');
 
 	<div class="header-area full">
 		<div class="main">
-			<header id="masthead" class="site-header" role="banner">
+			<header id="masthead" class="site-header inner" role="banner">
 				<span class="site-title">
 					<?php if ( get_theme_mod( 'sdm_logo' ) ) : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -49,4 +49,4 @@ $ping = get_bloginfo('pingback_url');
 
 	<div class="main-content-area full">
 		<div class="main">
-			<div id="content" class="site-content">
+			<div id="content" class="site-content inner">

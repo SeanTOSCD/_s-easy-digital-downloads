@@ -10,7 +10,7 @@
 
 	<div class="footer-area full">
 		<div class="main">
-			<footer id="colophon" class="site-footer" role="contentinfo">
+			<footer id="colophon" class="site-footer inner" role="contentinfo">
 				<span class="site-info">
 					<?php echo get_theme_mod( 'sdm_credits_copyright', '&copy; ' . date( 'Y' ) ); ?>
 				</span>
