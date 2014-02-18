@@ -35,7 +35,7 @@ You should also delete this paragraph and the 4 above it.
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 - Reset
-	1.5 - Structure
+	1.1 - Structure
 2.0 - Typography
 3.0 - Elements
 4.0 - Inputs and buttons
@@ -118,7 +118,7 @@ a img {
 }
 
 /*--------------------------------------------------------------
-1.5 - Structure - read the description and the CSS rules
+1.1 - Structure - read the description and the CSS rules
 *
 * If you're already familiar with Underscores, it's important
 * to know that the page-width HTML structure has been replaced
