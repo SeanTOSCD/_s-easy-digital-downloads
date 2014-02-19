@@ -585,7 +585,7 @@ a:active {
 img {
 	max-width: 100%;
 	height: auto;
-	vertical-align: baseline;
+	vertical-align: bottom;
 }
 embed,
 iframe,
