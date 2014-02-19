@@ -76,7 +76,7 @@ function sdm_customize_register( $wp_customize ) {
 	) ) );
 	// read more link
 	$wp_customize->get_setting( 'sdm_read_more' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'sdm_read_more', array( 'default' => 'Read More &rarr;' ) );		
+	$wp_customize->add_setting( 'sdm_read_more', array( 'default' => __( 'Read More &rarr;', 'sdm' ) ) );		
 	$wp_customize->add_control( 'sdm_read_more', array(
 	    'label' 	=> __( 'Excerpt & More Link Text', 'sdm' ),
 	    'section' 	=> 'sdm_content_section',
