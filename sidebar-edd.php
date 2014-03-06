@@ -18,5 +18,9 @@
 				<?php echo edd_get_purchase_link( array( 'id' => get_the_ID() ) ); ?>
 			</div>
 		</div>
-		<?php dynamic_sidebar( 'sidebar-edd' ); ?>
+		<?php if ( is_active_sidebar( 'sidebar-edd' ) ) : ?>
+			<?php dynamic_sidebar( 'sidebar-edd' ); ?>
+		<?php else : ?>
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php endif; ?>
 	</div>
