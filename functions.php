@@ -6,8 +6,8 @@
 /**
  * definitions
  */
-define( 'SDM_NAME', '' );
-define( 'SDM_VERSION', '1.0' );
+define( 'THEME_NAME', '' );
+define( 'THEME_VERSION', '1.0' );
 
 
 if ( ! function_exists( 'sdm_setup' ) ) :

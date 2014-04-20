@@ -20,7 +20,7 @@ Theme Instructions
 -----
 If you know how to use _s, you know how to use this starter theme. The same is true if you know how to use your browser inspector. CSS is really all that's missing.
 
-The theme uses the slug `sdm` throughout the files. Do a case-sensitive search and replace in *every* file to use your own theme slug. Change the theme name in the `style.css` file as well as the `rtl.css` file. In the `functions.php` file, be sure to change the definitions. They start with `SDM_` and because they are all caps, your case-sensitive search and replace didn't catch them.
+The theme uses the slug `sdm` throughout the files. Do a search and replace in *every* file to use your own theme slug. Change the theme name in the `style.css` file as well as the `rtl.css` file. In the `functions.php` file, be sure to change the definitions. They start with `THEME_`. You'll want something less generic.
 
 In the languages directory, change the name of the `.pot` file to match your slug. And of course, name the theme folder whatever you'd like.
 
