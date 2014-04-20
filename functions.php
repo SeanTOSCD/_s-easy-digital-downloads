@@ -75,8 +75,7 @@ add_action( 'widgets_init', 'sdm_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sdm_scripts() {
-	wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fontawesome' );
+	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
 	wp_enqueue_style( 'sdm-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'sdm-navigation', get_template_directory_uri() . '/inc/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'sdm-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20130115', true );
