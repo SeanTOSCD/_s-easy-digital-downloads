@@ -18,16 +18,18 @@ $products = new WP_Query( $product_args );
 
 <div id="store-front">
 <?php if ( $products->have_posts() ) : $i = 1; ?>
-	<div class="store-info">
-		<?php if ( get_theme_mod( 'sdm_edd_store_archives_title' ) ) : ?>
-			<h1 class="store-title"><?php echo get_theme_mod( 'sdm_edd_store_archives_title' ); ?></h1>
-		<?php endif; ?>
-		<?php if ( get_theme_mod( 'sdm_edd_store_archives_description' ) ) : ?>
-			<div class="store-description">
-				<?php echo wpautop( get_theme_mod( 'sdm_edd_store_archives_description' ) ); ?>
-			</div>
-		<?php endif; ?>
-	</div>
+	<?php if ( get_theme_mod( 'sdm_edd_store_archives_title' ) || get_theme_mod( 'sdm_edd_store_archives_description' ) ) : ?>
+		<div class="store-info">
+			<?php if ( get_theme_mod( 'sdm_edd_store_archives_title' ) ) : ?>
+				<h1 class="store-title"><?php echo get_theme_mod( 'sdm_edd_store_archives_title' ); ?></h1>
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'sdm_edd_store_archives_description' ) ) : ?>
+				<div class="store-description">
+					<?php echo wpautop( get_theme_mod( 'sdm_edd_store_archives_description' ) ); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>
 	<div class="product-grid clear">
 		<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 			
