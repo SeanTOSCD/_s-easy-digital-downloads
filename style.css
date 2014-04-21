@@ -533,9 +533,10 @@ a:active {
 11.0 Easy Digital Downloads
 --------------------------------------------------------------*/
 .threecol.product {
-	float: left;
-	width: 32.291666666667%;
-	margin: 0 1.5625% 30px 0;
+	display: inline-block;
+	width: 310px;
+	margin: 0 11px 30px 0;
+	vertical-align: top;
 }
 .threecol.product:nth-child(3n+3) {
 	margin-right: 0;
@@ -601,12 +602,11 @@ object {
 --------------------------------------------------------------*/
 @media screen and (max-width: 960px) {
 	.threecol.product {
-		float: left;
 		width: 49%;
-		margin: 0 2% 30px 0;
+		margin: 0 1.2% 30px 0;
 	}
 	.threecol.product:nth-child(3n+3) {
-		margin-right: 2%;
+		margin-right: 1.2%;
 	}
 	.threecol.product:nth-child(even) {
 		margin-right: 0;
@@ -631,7 +631,6 @@ object {
 
 @media screen and (max-width: 550px) {
 	.threecol.product {
-		float: none;
 		width: 100%;
 		margin: 0 0 30px 0;
 	}
