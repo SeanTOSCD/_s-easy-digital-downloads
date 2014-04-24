@@ -44,7 +44,10 @@ function sdm_customize_register( $wp_customize ) {
 		'priority'	=> 20
 	) ) );	
 	// hide the tagline?
-	$wp_customize->add_setting( 'sdm_hide_tagline', array( 'default' => 0 ) );
+	$wp_customize->add_setting( 'sdm_hide_tagline', array( 
+		'default' => 0,
+		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'sdm_hide_tagline', array(
 		'label'		=> __( 'Hide Tagline', 'sdm' ),
 		'section'	=> 'title_tagline',
@@ -62,7 +65,10 @@ function sdm_customize_register( $wp_customize ) {
 		'priority'   	=> 20,
 	) );
 	// post content
-	$wp_customize->add_setting( 'sdm_post_content', array( 'default' => 'full_content' ) );
+	$wp_customize->add_setting( 'sdm_post_content', array( 
+		'default' => 'full_content',
+		'sanitize_callback' => 'sdm_sanitize_radio'  
+	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sdm_post_content', array(
 		'label'		=> __( 'Post Feed Content', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -76,7 +82,10 @@ function sdm_customize_register( $wp_customize ) {
 	) ) );
 	// read more link
 	$wp_customize->get_setting( 'sdm_read_more' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'sdm_read_more', array( 'default' => __( 'Read More &rarr;', 'sdm' ) ) );		
+	$wp_customize->add_setting( 'sdm_read_more', array(
+		'default' => __( 'Read More &rarr;', 'sdm' ),
+		'sanitize_callback' => 'sdm_sanitize_text' 
+	) );		
 	$wp_customize->add_control( 'sdm_read_more', array(
 	    'label' 	=> __( 'Excerpt & More Link Text', 'sdm' ),
 	    'section' 	=> 'sdm_content_section',
@@ -84,7 +93,10 @@ function sdm_customize_register( $wp_customize ) {
 		'priority'	=> 20,
 	) );
 	// show featured images on feed?
-	$wp_customize->add_setting( 'sdm_featured_image', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'sdm_featured_image', array( 
+		'default' => 1,
+		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'sdm_featured_image', array(
 		'label'		=> __( 'Show Featured Images in post listings?', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -92,7 +104,10 @@ function sdm_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// show featured images on posts?
-	$wp_customize->add_setting( 'sdm_single_featured_image', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'sdm_single_featured_image', array( 
+		'default' => 1,
+		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'sdm_single_featured_image', array(
 		'label'		=> __( 'Show Featured Images on Single Posts?', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -100,7 +115,10 @@ function sdm_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// show single post footer?
-	$wp_customize->add_setting( 'sdm_post_footer', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'sdm_post_footer', array( 
+		'default' => 1,
+		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'sdm_post_footer', array(
 		'label'		=> __( 'Show Post Footer on Single Posts?', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -108,7 +126,10 @@ function sdm_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// comments on pages?
-	$wp_customize->add_setting( 'sdm_page_comments', array( 'default' => 0 ) );
+	$wp_customize->add_setting( 'sdm_page_comments', array( 
+		'default' => 0,
+		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'sdm_page_comments', array(
 		'label'		=> __( 'Display Comments on Standard Pages?', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -117,7 +138,10 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// credits & copyright
 	$wp_customize->get_setting( 'sdm_credits_copyright' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'sdm_credits_copyright', array( 'default' => null ) );
+	$wp_customize->add_setting( 'sdm_credits_copyright', array( 
+		'default' => null,
+		'sanitize_callback' => 'sdm_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'sdm_credits_copyright', array(
 		'label'		=> __( 'Footer Credits & Copyright', 'sdm' ),
 		'section'	=> 'sdm_content_section',
@@ -137,7 +161,10 @@ function sdm_customize_register( $wp_customize ) {
 			'priority'   	=> 30,
 		) );
 		// show comments on downloads?
-		$wp_customize->add_setting( 'sdm_download_comments', array( 'default' => 0 ) );
+		$wp_customize->add_setting( 'sdm_download_comments', array( 
+			'default' => 0,
+			'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		) );
 		$wp_customize->add_control( 'sdm_download_comments', array(
 			'label'		=> __( 'Comments on Downloads?', 'sdm' ),
 			'section'	=> 'sdm_edd_options',
@@ -146,7 +173,10 @@ function sdm_customize_register( $wp_customize ) {
 		) );
 		// store front/downloads archive headline
 		$wp_customize->get_setting( 'sdm_edd_store_archives_title' )->transport = 'postMessage';
-		$wp_customize->add_setting( 'sdm_edd_store_archives_title', array( 'default' => null ) );
+		$wp_customize->add_setting( 'sdm_edd_store_archives_title', array( 
+			'default' => null,
+			'sanitize_callback' => 'sdm_sanitize_text' 
+		) );
 		$wp_customize->add_control( 'sdm_edd_store_archives_title', array(
 			'label'		=> __( 'Store Front Main Title', 'sdm' ),
 			'section'	=> 'sdm_edd_options',
@@ -162,7 +192,10 @@ function sdm_customize_register( $wp_customize ) {
 			'priority'	=> 30,
 		) ) );
 		// hide download description (excerpt)?
-		$wp_customize->add_setting( 'sdm_download_description', array( 'default' => 0 ) );
+		$wp_customize->add_setting( 'sdm_download_description', array( 
+			'default' => 0,
+			'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		) );
 		$wp_customize->add_control( 'sdm_download_description', array(
 			'label'		=> __( 'Hide Download Description', 'sdm' ),
 			'section'	=> 'sdm_edd_options',
@@ -171,7 +204,10 @@ function sdm_customize_register( $wp_customize ) {
 		) );
 		//  view details link
 		$wp_customize->get_setting( 'sdm_product_view_details' )->transport = 'postMessage';
-		$wp_customize->add_setting( 'sdm_product_view_details', array( 'default' => __( 'View Details', 'sdm' ) ) );
+		$wp_customize->add_setting( 'sdm_product_view_details', array( 
+			'default' => __( 'View Details', 'sdm' ),
+			'sanitize_callback' => 'sdm_sanitize_text' 
+		) );
 		$wp_customize->add_control( 'sdm_product_view_details', array(
 		    'label' 	=> __( 'Store Item Link Text', 'sdm' ),
 		    'section' 	=> 'sdm_edd_options',
@@ -205,6 +241,43 @@ function sdm_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'static_front_page' )->priority = 50;
 }
 add_action( 'customize_register', 'sdm_customize_register' );
+
+
+/** ===============
+ * Sanitize checkbox options
+ */
+function sdm_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+
+/** ===============
+ * Sanitize radio options
+ */
+function sdm_sanitize_radio( $input ) {
+    $valid = array(
+		'excerpt'		=> 'Excerpt',
+		'full_content'	=> 'Full Content'
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+
+/** ===============
+ * Sanitize text input
+ */
+function sdm_sanitize_text( $input ) {
+    return strip_tags( stripslashes( $input ) );
+}
 
 
 /** ===============
