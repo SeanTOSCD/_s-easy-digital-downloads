@@ -8,7 +8,7 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<div class="entry-meta">
-			<?php presentation_posted_on(); ?>
+			<?php sdm_posted_on(); ?>
 		</div>
 	</header>
 	<div class="entry-summary">
