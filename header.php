@@ -41,7 +41,7 @@ $ping = get_bloginfo('pingback_url');
 					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'sdm' ); ?></span>
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sdm' ); ?></a>
 		
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => false ) ); ?>
 				</nav>
 			</header>
 		</div>
