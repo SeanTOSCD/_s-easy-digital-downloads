@@ -81,11 +81,11 @@ if ( post_password_required() ) {
 				'comment_notes_before'	=> '',	
 				'comment_notes_after'	=> '',	
 				'fields'				=> apply_filters( 'comment_form_default_fields', array(
-					'author'				=> '<p class="comment-form-author comment-form-field"><input id="author" name="author" type="text" placeholder="Name"' . $aria_req . ' /></p>',
+					'author'				=> '<p class="comment-form-author comment-form-field"><input id="author" name="author" type="text" placeholder="' . __( 'Name', 'sdm' ) . '"' . $aria_req . ' /></p>',
 				
-					'email'					=> '<p class="comment-form-email comment-form-field"><input id="email" name="email" type="text" placeholder="Email"' . $aria_req . ' /></p>',
+					'email'					=> '<p class="comment-form-email comment-form-field"><input id="email" name="email" type="text" placeholder="' . __( 'Email', 'sdm' ) . '"' . $aria_req . ' /></p>',
 				
-					'url'					=> '<p class="comment-form-url comment-form-field"><input id="url" name="url" type="text" placeholder="Website URL" /></p>'
+					'url'					=> '<p class="comment-form-url comment-form-field"><input id="url" name="url" type="text" placeholder="' . __( 'Website URL', 'sdm' ) . '" /></p>'
 					)
 				),
 			) 
