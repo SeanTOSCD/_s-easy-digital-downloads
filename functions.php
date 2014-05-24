@@ -130,7 +130,7 @@ function sdm_first_post_class( $classes ) {
 	global $wp_query;
 	if ( 0 == $wp_query->current_post )
 		$classes[] = 'top';
-		return $classes;
+	return $classes;
 }
 add_filter( 'post_class', 'sdm_first_post_class' );
 
