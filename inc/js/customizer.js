@@ -31,9 +31,4 @@
 			$( '.view-details' ).text( to );
 		} );
 	} );
-	wp.customize( 'sdm_credits_copyright', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-info' ).text( to );
-		} );
-	} );
 } )( jQuery );

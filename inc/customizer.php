@@ -9,10 +9,12 @@ function sdm_customize_register( $wp_customize ) {
 	 */
 	class sdm_customize_textarea_control extends WP_Customize_Control {
 		public $type = 'textarea';
+		public $description = '';
 		public function render_content() { ?>
 	
 		<label>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<div class="control-description"><?php echo esc_html( $this->description ); ?></div>
 			<textarea rows="5" style="width:98%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
 		</label>
 	
@@ -24,19 +26,21 @@ function sdm_customize_register( $wp_customize ) {
 	 * Site Title (Logo) & Tagline
 	 */
 	// section adjustments
-	$wp_customize->get_section( 'title_tagline' )->title = __( 'Site Title (Logo) & Tagline', 'sdm' );
-	$wp_customize->get_section( 'title_tagline' )->priority = 10;
+	$wp_customize->get_section( 'title_tagline' )->title		= __( 'Site Title (Logo) & Tagline', 'sdm' );
+	$wp_customize->get_section( 'title_tagline' )->priority		= 10;
 	
 	//site title
-	$wp_customize->get_control( 'blogname' )->priority = 10;
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_control( 'blogname' )->priority			= 10;
+	$wp_customize->get_setting( 'blogname' )->transport			= 'postMessage';
 	
 	// tagline
-	$wp_customize->get_control( 'blogdescription' )->priority = 30;
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_control( 'blogdescription' )->priority	= 30;
+	$wp_customize->get_setting( 'blogdescription' )->transport	= 'postMessage';
 	
 	// logo uploader
-	$wp_customize->add_setting( 'sdm_logo', array( 'default' => null ) );
+	$wp_customize->add_setting( 'sdm_logo', array(
+		'default' => null
+	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sdm_logo', array(
 		'label'		=> __( 'Custom Site Logo (replaces title)', 'sdm' ),
 		'section'	=> 'title_tagline',
@@ -45,8 +49,8 @@ function sdm_customize_register( $wp_customize ) {
 	) ) );	
 	// hide the tagline?
 	$wp_customize->add_setting( 'sdm_hide_tagline', array( 
-		'default' => 0,
-		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		'default'			=> 0,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( 'sdm_hide_tagline', array(
 		'label'		=> __( 'Hide Tagline', 'sdm' ),
@@ -66,26 +70,22 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// post content
 	$wp_customize->add_setting( 'sdm_post_content', array( 
-		'default' => 'full_content',
-		'sanitize_callback' => 'sdm_sanitize_radio'  
+		'default'			=> 0,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sdm_post_content', array(
-		'label'		=> __( 'Post Feed Content', 'sdm' ),
+		'label'		=> __( 'Display Post Excerpts?', 'sdm' ),
 		'section'	=> 'sdm_content_section',
 		'settings'	=> 'sdm_post_content',
 		'priority'	=> 10,
-		'type'      => 'radio',
-		'choices'   => array(
-			'excerpt'		=> 'Excerpt',
-			'full_content'	=> 'Full Content'
-		),
+		'type'      => 'checkbox'
 	) ) );
 	// read more link
-	$wp_customize->get_setting( 'sdm_read_more' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'sdm_read_more', array(
-		'default' => __( 'Read More &rarr;', 'sdm' ),
-		'sanitize_callback' => 'sdm_sanitize_text' 
-	) );		
+		'default'			=> __( 'Read More &rarr;', 'sdm' ),
+		'transport'			=> 'postMessage',
+		'sanitize_callback'	=> 'sdm_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'sdm_read_more', array(
 	    'label' 	=> __( 'Excerpt & More Link Text', 'sdm' ),
 	    'section' 	=> 'sdm_content_section',
@@ -94,8 +94,8 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// show featured images on feed?
 	$wp_customize->add_setting( 'sdm_featured_image', array( 
-		'default' => 1,
-		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		'default'			=> 1,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( 'sdm_featured_image', array(
 		'label'		=> __( 'Show Featured Images in post listings?', 'sdm' ),
@@ -105,8 +105,8 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// show featured images on posts?
 	$wp_customize->add_setting( 'sdm_single_featured_image', array( 
-		'default' => 1,
-		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		'default'			=> 1,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( 'sdm_single_featured_image', array(
 		'label'		=> __( 'Show Featured Images on Single Posts?', 'sdm' ),
@@ -116,8 +116,8 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// show single post footer?
 	$wp_customize->add_setting( 'sdm_post_footer', array( 
-		'default' => 1,
-		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		'default'			=> 1,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( 'sdm_post_footer', array(
 		'label'		=> __( 'Show Post Footer on Single Posts?', 'sdm' ),
@@ -127,8 +127,8 @@ function sdm_customize_register( $wp_customize ) {
 	) );
 	// comments on pages?
 	$wp_customize->add_setting( 'sdm_page_comments', array( 
-		'default' => 0,
-		'sanitize_callback' => 'sdm_sanitize_checkbox'  
+		'default'			=> 0,
+		'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 	) );
 	$wp_customize->add_control( 'sdm_page_comments', array(
 		'label'		=> __( 'Display Comments on Standard Pages?', 'sdm' ),
@@ -137,17 +137,16 @@ function sdm_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// credits & copyright
-	$wp_customize->get_setting( 'sdm_credits_copyright' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'sdm_credits_copyright', array( 
-		'default' => null,
-		'sanitize_callback' => 'sdm_sanitize_text' 
+	$wp_customize->add_setting( 'sdm_credits_copyright', array(
+		'default'			=> null,
+		'sanitize_callback'	=> 'sdm_sanitize_textarea' 
 	) );
-	$wp_customize->add_control( 'sdm_credits_copyright', array(
-		'label'		=> __( 'Footer Credits & Copyright', 'sdm' ),
-		'section'	=> 'sdm_content_section',
-		'settings'	=> 'sdm_credits_copyright',
-		'priority'	=> 70,
-	) );
+	$wp_customize->add_control( new sdm_customize_textarea_control( $wp_customize, 'sdm_credits_copyright', array(
+		'label'			=> __( 'Footer Credits & Copyright', 'sdm' ),
+		'section'		=> 'sdm_content_section',
+		'priority'		=> 70,
+		'description'	=> __( 'Allowed tags', 'sdm' ) . ': <img>, <a>, <div>, <span>, <blockquote>, <p>, <em>, <strong>, <form>, <input>, <br>, <s>, <i>, <b>',
+	) ) );
 	
 	
 	/** ===============
@@ -172,10 +171,10 @@ function sdm_customize_register( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 		// store front/downloads archive headline
-		$wp_customize->get_setting( 'sdm_edd_store_archives_title' )->transport = 'postMessage';
 		$wp_customize->add_setting( 'sdm_edd_store_archives_title', array( 
-			'default' => null,
-			'sanitize_callback' => 'sdm_sanitize_text' 
+			'default'			=> null,
+			'transport'			=> 'postMessage',
+			'sanitize_callback'	=> 'sdm_sanitize_text' 
 		) );
 		$wp_customize->add_control( 'sdm_edd_store_archives_title', array(
 			'label'		=> __( 'Store Front Main Title', 'sdm' ),
@@ -184,7 +183,11 @@ function sdm_customize_register( $wp_customize ) {
 			'priority'	=> 20,
 		) );
 		// store front/downloads archive description
-		$wp_customize->add_setting( 'sdm_edd_store_archives_description', array( 'default' => null ) );
+		$wp_customize->add_setting( 'sdm_edd_store_archives_description', array(
+			'default'			=> null,
+			'sanitize_callback'	=> 'sdm_sanitize_textarea',
+			'description'		=> __( 'Allowed tags', 'sdm' ) . ': <img>, <a>, <div>, <span>, <blockquote>, <p>, <em>, <strong>, <form>, <input>, <br>, <s>, <i>, <b>',
+		) );
 		$wp_customize->add_control( new sdm_customize_textarea_control( $wp_customize, 'sdm_edd_store_archives_description', array(
 			'label'		=> __( 'Store Front Description', 'sdm' ),
 			'section'	=> 'sdm_edd_options',
@@ -193,8 +196,8 @@ function sdm_customize_register( $wp_customize ) {
 		) ) );
 		// hide download description (excerpt)?
 		$wp_customize->add_setting( 'sdm_download_description', array( 
-			'default' => 0,
-			'sanitize_callback' => 'sdm_sanitize_checkbox'  
+			'default'			=> 0,
+			'sanitize_callback'	=> 'sdm_sanitize_checkbox'  
 		) );
 		$wp_customize->add_control( 'sdm_download_description', array(
 			'label'		=> __( 'Hide Download Description', 'sdm' ),
@@ -203,10 +206,10 @@ function sdm_customize_register( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 		//  view details link
-		$wp_customize->get_setting( 'sdm_product_view_details' )->transport = 'postMessage';
 		$wp_customize->add_setting( 'sdm_product_view_details', array( 
-			'default' => __( 'View Details', 'sdm' ),
-			'sanitize_callback' => 'sdm_sanitize_text' 
+			'default'			=> __( 'View Details', 'sdm' ),
+			'transport'			=> 'postMessage',
+			'sanitize_callback'	=> 'sdm_sanitize_text' 
 		) );
 		$wp_customize->add_control( 'sdm_product_view_details', array(
 		    'label' 	=> __( 'Store Item Link Text', 'sdm' ),
@@ -215,7 +218,9 @@ function sdm_customize_register( $wp_customize ) {
 			'priority'	=> 50,
 		) );
 		// store front/archive item count
-		$wp_customize->add_setting( 'sdm_store_front_count', array( 'default' => 9 ) );		
+		$wp_customize->add_setting( 'sdm_store_front_count', array(
+			'default' => 9
+		) );		
 		$wp_customize->add_control( 'sdm_store_front_count', array(
 		    'label' 	=> __( 'Store Front Item Count', 'sdm' ),
 		    'section' 	=> 'sdm_edd_options',
@@ -229,8 +234,8 @@ function sdm_customize_register( $wp_customize ) {
 	 * Navigation Menu(s)
 	 */
 	// section adjustments
-	$wp_customize->get_section( 'nav' )->title = __( 'Navigation Menu(s)', 'sdm' );
-	$wp_customize->get_section( 'nav' )->priority = 40;
+	$wp_customize->get_section( 'nav' )->title		= __( 'Navigation Menu(s)', 'sdm' );
+	$wp_customize->get_section( 'nav' )->priority	= 40;
 	
 	
 
@@ -256,27 +261,81 @@ function sdm_sanitize_checkbox( $input ) {
 
 
 /** ===============
- * Sanitize radio options
- */
-function sdm_sanitize_radio( $input ) {
-    $valid = array(
-		'excerpt'		=> 'Excerpt',
-		'full_content'	=> 'Full Content'
-    );
- 
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    } else {
-        return '';
-    }
-}
-
-
-/** ===============
  * Sanitize text input
  */
 function sdm_sanitize_text( $input ) {
     return strip_tags( stripslashes( $input ) );
+}
+
+
+/**
+ * Sanitize textarea
+ */
+function sdm_sanitize_textarea( $input ) {
+	$allowed = array(
+		's'			=> array(),
+		'br'		=> array(),
+		'em'		=> array(),
+		'i'			=> array(),
+		'strong'	=> array(),
+		'b'			=> array(),
+		'a'			=> array(
+			'href'			=> array(),
+			'title'			=> array(),
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+		),
+		'form'		=> array(
+			'id'			=> array(),
+			'class'			=> array(),
+			'action'		=> array(),
+			'method'		=> array(),
+			'autocomplete'	=> array(),
+			'style'			=> array(),
+		),
+		'input'		=> array(
+			'type'			=> array(),
+			'name'			=> array(),
+			'class' 		=> array(),
+			'id'			=> array(),
+			'value'			=> array(),
+			'placeholder'	=> array(),
+			'tabindex'		=> array(),
+			'style'			=> array(),
+		),
+		'img'		=> array(
+			'src'			=> array(),
+			'alt'			=> array(),
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+			'height'		=> array(),
+			'width'			=> array(),
+		),
+		'span'		=> array(
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+		),
+		'p'			=> array(
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+		),
+		'div'		=> array(
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+		),
+		'blockquote' => array(
+			'cite'			=> array(),
+			'class'			=> array(),
+			'id'			=> array(),
+			'style'			=> array(),
+		),
+	);
+    return wp_kses( $input, $allowed );
 }
 
 
@@ -292,6 +351,7 @@ function sdm_customizer_styles() { ?>
 		.customize-control label { font-size: 12px !important; }
 		#customize-control-sdm_read_more { margin-bottom: 30px; }
 		#customize-control-sdm_store_front_count input { width: 50px; }
+		.control-description { color: #999; font-style: italic; margin-bottom: 6px; }
 	</style>
 <?php }
 add_action('customize_controls_print_styles', 'sdm_customizer_styles');
