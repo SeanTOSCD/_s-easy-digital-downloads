@@ -12,7 +12,14 @@
 		<div class="main">
 			<footer id="colophon" class="site-footer inner" role="contentinfo">
 				<span class="site-info">
-					<?php echo get_theme_mod( 'shoppette_credits_copyright', get_bloginfo( 'description' ) . ' &copy; ' . date( 'Y' ) ); ?>
+					<?php
+						$site_info = get_bloginfo( 'description' ) . ' - ' . get_bloginfo( 'name' ) . ' &copy; ' . date( 'Y' );
+						if ( '' != get_theme_mod( 'sdm_credits_copyright' ) ) :
+							echo get_theme_mod( 'sdm_credits_copyright' );
+						else : 
+							echo $site_info;
+						endif;
+					?>
 				</span>
 			</footer>
 		</div>
