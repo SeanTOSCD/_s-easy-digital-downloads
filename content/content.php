@@ -16,7 +16,7 @@
 	</header>
 
 	<?php // show excerpts on search results and main content if options is selected ?>
-	<?php if ( is_search() || get_theme_mod( 'sdm_post_content' ) == 'excerpt' ) : ?>
+	<?php if ( is_search() || 1 == get_theme_mod( 'sdm_post_content' ) ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div>
