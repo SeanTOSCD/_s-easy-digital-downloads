@@ -7,7 +7,7 @@
  * definitions
  */
 define( 'THEME_NAME', '' );
-define( 'THEME_VERSION', '1.0.3' );
+define( 'THEME_VERSION', '1.0.4' );
 
 
 if ( ! function_exists( 'sdm_setup' ) ) :
