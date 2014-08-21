@@ -204,6 +204,8 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	-ms-word-wrap: normal;
+	word-wrap: normal;
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
