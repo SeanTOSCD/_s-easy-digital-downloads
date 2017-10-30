@@ -1,12 +1,11 @@
+<html>
+	<body>
+
 <?php
 /**
  * the closing of the main content elements and the footer element
  */
 ?>
-
-			</div>
-		</div>
-	</div>
 
 	<div class="footer-area full">
 		<div class="main">
@@ -27,5 +26,5 @@
 
 <?php wp_footer(); ?>
 
-</body>
+	</body>
 </html>
